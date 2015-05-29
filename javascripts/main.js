@@ -1,9 +1,10 @@
 $(function(){
 	$('a[href^="http"]').each(function(){
 		var prefix = "http://vivaandco.github.io/help.vivaandco.com";
+		var prefix2 = "http://help.vivaandco.com";
 		var link = $(this).attr('href');
 
-		if(link.substr(0, prefix.length).toLowerCase() != prefix.toLowerCase()){
+		if(link.substr(0, prefix.length).toLowerCase() != prefix.toLowerCase() && link.substr(0, prefix.length).toLowerCase() != prefix2.toLowerCase()){
 			$(this).addClass('external-link').attr('target', '_blank');
 		}
 	});
