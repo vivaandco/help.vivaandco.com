@@ -3,7 +3,7 @@ Slate Theme for GitHub Pages
 by Jason Costello, @jsncostello
 *******************************************************************************/
 
-@import url(github-light.css);
+@import url(pygment_trac.css);
 
 /*******************************************************************************
 MeyerWeb Reset
@@ -37,6 +37,9 @@ footer, header, hgroup, menu, nav, section {
 
 ol, ul {
   list-style: none;
+}
+
+blockquote, q {
 }
 
 table {
@@ -118,11 +121,14 @@ a {
   -ms-transition: text-shadow 0.5s ease;
 }
 
-a:hover, a:focus {text-decoration: underline;}
+#main_content a:hover {
+  color: #0069ba;
+  text-shadow: #0090ff 0px 0px 2px;
+}
 
-footer a {
-  color: #F2F2F2;
-  text-decoration: underline;
+footer a:hover {
+  color: #43adff;
+  text-shadow: #0090ff 0px 0px 2px;
 }
 
 em {
@@ -148,15 +154,6 @@ img {
   -ms-box-shadow: 0 0 5px #ebebeb;
 }
 
-p img {
-  display: inline;
-  margin: 0;
-  padding: 0;
-  vertical-align: middle;
-  text-align: center;
-  border: none;
-}
-
 pre, code {
   width: 100%;
   color: #222;
@@ -168,6 +165,9 @@ pre, code {
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+
+
+
 }
 
 pre {
@@ -195,20 +195,22 @@ blockquote {
   border-left: 3px solid #bbb;
 }
 
-
 ul, ol, dl {
   margin-bottom: 15px
 }
+ul ul, ul ol, ul dl,
+ol ul, ol ol, ol dl,
+dl ul, dl ol, dl dl {
+  margin-bottom: 0
+}
 
-ul {
-  list-style-position: inside;
-  list-style: disc;
+ul li {
+  list-style: inside;
   padding-left: 20px;
 }
 
-ol {
-  list-style-position: inside;
-  list-style: decimal;
+ol li {
+  list-style: decimal inside;
   padding-left: 20px;
 }
 
@@ -256,6 +258,11 @@ form {
   padding: 20px;
 }
 
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
 /*******************************************************************************
 Full-Width Styles
 *******************************************************************************/
@@ -266,7 +273,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 940px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -284,6 +291,41 @@ Full-Width Styles
   box-shadow: 0 0 10px rgba(0,0,0,.5);
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+.tip:before,
+.warning:before{
+  content:"Pro Tip";
+  text-shadow: 2px 2px 5px rgba(0,0,0,.8);
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+.warning:before{
+  content:"Warning";
+  text-shadow: 2px 2px 5px rgba(0,0,0,.4);
+}
+.tip,
+.warning {
+  padding: 20px;
+  margin: 30px 0;
+  color: #fff;
+  font-weight: 400;
+  background: #0090ff;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-radius:10px;
+}
+.warning {
+  background: yellow;
+  color: #000;
+}
+.tip span[class^="icon-"],
+.tip a,
+.warning span[class^="icon-"],
+.warning a{
+  color:#000;
 }
 
 #header_wrap {
@@ -422,4 +464,17 @@ Small Device Styles
     font-size: 11px;
   }
 
+}
+#TOC ul,
+#TOC li{
+  list-style: none;
+  padding-left: 0;
+  margin-right: 10px;
+}
+#TOC li.major{
+  border-bottom: 1px dotted gray;
+  margin-bottom: 5px;
+}
+#TOC li.minor{
+  padding-left: 1.5em;
 }

@@ -1,0 +1,6 @@
+markdown: rdiscount
+gitbase: https://github.com/vivaandco/help.vivaandco.com
+url: http://help.vivaandco.com
+codex: http://codex.wordpress.org
+root: ./
+customvar: some string value

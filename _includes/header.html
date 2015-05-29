@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Viva &amp; Co. Online Help " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="icomoon/style.css">
+    <script src="//code.jquery.com/jquery-2.0.3.js"></script>
+    <script src="{{ root }}javascripts/main.js"></script>
+    <script src="{{ root }}javascripts/jquery.scrollTo.min.js"></script>
+    <title>{{page.title}} - Viva &amp; Co. Online Help</title>
+    <!-- other stuff -->
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <h1 id="project_title"><a href="{{site.url}}">Viva &amp; Co. Online Help</a></h1>
+          <h2 id="project_tagline">{{page.title}}</h2>
+          {% if page.giturl !=  %}
+          <h4><a href="{{page.giturl}}">View Corresponding code on GitHub</a></h4>
+          {% endif %}
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
